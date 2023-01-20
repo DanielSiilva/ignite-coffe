@@ -1,6 +1,6 @@
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react"
 
-import {Introduction,Highlights,Item01,Item02, Item03, Item04, Logo, TitleSubtitle} from "./styled"
+import {Introduction,Highlights,Item01,Item02, Item03, Item04, Logo, TitleSubtitle, Container} from "./styled"
 
 import Banner from "../../../assets/banner.svg"
 
@@ -8,7 +8,7 @@ export function Information (){
 
 
     return (
-        <>
+        <Container>
              <Introduction>
                 <TitleSubtitle>
                     <h1>
@@ -41,9 +41,13 @@ export function Information (){
                         <p> O café chega fresquinho até você</p>
                    </Item04>
                 </Highlights>
+                
+                
             </Introduction>
 
             <Logo  src={Banner}/>
-        </>
+          
+            
+        </Container>
     )
 }

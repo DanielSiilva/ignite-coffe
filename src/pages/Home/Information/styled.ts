@@ -1,8 +1,14 @@
 import styled from "styled-components";
 
 
-export const Introduction = styled.div`
+export const Container = styled.div`
     display: flex;
+    gap: 2rem;
+
+`
+
+export const Introduction = styled.div`
+    display: grid;
     flex-direction: column;
     gap: 3rem;
 
