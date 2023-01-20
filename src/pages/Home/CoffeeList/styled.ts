@@ -1,14 +1,27 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    border: 1px solid red;
 
     margin-top: 1rem;
+    height: auto;
 
     display: flex;
     flex-direction: column;
+    gap: 2rem;
 
-    
+    width: 100%;
+
+   
+
+    section{
+        
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        
+        
+    }
 
 `
 

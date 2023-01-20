@@ -1,5 +1,10 @@
+import { coffeesList } from "../../../data/coffees";
 import { Card } from "../Card";
-import { Container, Title } from "./styled";
+
+import { 
+    Container, 
+    Title, 
+} from "./styled";
 
 
 export function CoffeeList(){
@@ -11,7 +16,14 @@ export function CoffeeList(){
             </Title>
 
             <section>
-                <Card />
+                {coffeesList.map((coffee)=>{
+                    return(
+                        <Card 
+                            key={coffee.id}
+                            coffee={coffee}
+                        />
+                    )
+                })}
             </section>
         </Container>
     )

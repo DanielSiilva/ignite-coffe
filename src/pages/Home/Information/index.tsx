@@ -1,6 +1,16 @@
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react"
 
-import {Introduction,Highlights,Item01,Item02, Item03, Item04, Logo, TitleSubtitle, Container} from "./styled"
+import {
+    Introduction,
+    Highlights,
+    Item01,
+    Item02, 
+    Item03, 
+    Item04, 
+    Logo, 
+    TitleSubtitle, 
+    Container,
+} from "./styled"
 
 import Banner from "../../../assets/banner.svg"
 
