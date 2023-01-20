@@ -1,13 +1,18 @@
-import { Container } from "./styled";
+import { Card } from "../Card";
+import { Container, Title } from "./styled";
 
 
 export function CoffeeList(){
 
     return(
         <Container>
-            <div>
+            <Title>
                 <h2>Nossos cafés</h2>
-            </div>
+            </Title>
+
+            <section>
+                <Card />
+            </section>
         </Container>
     )
 }
