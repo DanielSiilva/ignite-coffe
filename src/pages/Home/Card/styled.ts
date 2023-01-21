@@ -9,7 +9,7 @@ export const Container = styled.div`
     padding: 0rem 1rem 1rem 1rem;
     gap: 1rem;
 
-    width: 230px;
+    width: 235px;
     height: 318px;
     left: 0px;
     top: 0px;
