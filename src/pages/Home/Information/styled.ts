@@ -1,9 +1,15 @@
 import styled from "styled-components";
 
+import Background from "../../../assets/Background.svg"
 
 export const Container = styled.div`
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
+    padding: 2rem 10rem;
+
+    background-image: url(${Background});
+    background-size: cover;
+  
 
 `
 
