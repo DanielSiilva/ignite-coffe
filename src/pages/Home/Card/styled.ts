@@ -57,9 +57,6 @@ export const Header = styled.div`
             border-radius: 8px;
     }
     
-
-    
-
 `
 
 export const TitleInfo = styled.div`
@@ -89,3 +86,79 @@ export const TitleInfo = styled.div`
     }
 
 `
+
+export const ActionBuy = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+
+    width: 12.5rem;
+
+    padding: 0.5rem;
+    
+`
+
+export const Price = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+
+    p:nth-child(1){
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+
+        color: ${props => props.theme['base-text']};
+    }
+
+
+    p:nth-child(2){
+        font-size: 20px;
+        font-weight: bold;
+
+        color: ${props => props.theme['base-title']};
+    }
+`
+
+export const Quantify = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+`
+
+
+
+
+
+export const ItemBuy = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+
+    width: 38px;
+    height: 38px;
+
+    background:${props => props.theme['purple-dark']};
+    border-radius: 6px;
+
+    :hover{
+        cursor: pointer;
+        background:${props => props.theme['purple']};
+    }
+    
+    svg{
+        color: ${props => props.theme['background']};
+    }
+
+`
+
