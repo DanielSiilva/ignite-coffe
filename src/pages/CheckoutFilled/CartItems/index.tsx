@@ -7,7 +7,12 @@ import {
 
 
 
+
+
+
 export function CartItems (){
+
+
 
     return(
         <ContainerCard>
@@ -17,7 +22,7 @@ export function CartItems (){
                 <div> Aqui Itens do Carrinho</div>
 
                 <div>
-
+                    
                 </div>
             </Card>
                 
