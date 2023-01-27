@@ -1,3 +1,4 @@
+import { CartItem } from "../../../context/ContexCart";
 import { useCart } from "../../../hooks/useCart";
 import { 
     ContainerCard,
@@ -7,14 +8,15 @@ import {
 
 
 
+interface CoffeeCartCardProps {
+    coffee: CartItem
+}
 
 
 
-
-export function CartItems (){
+export function CartItems ({coffee}: CoffeeCartCardProps){
      const {cartItems} = useCart()
     
-     console.log(cartItems)
 
     return(
         <ContainerCard>
@@ -24,6 +26,7 @@ export function CartItems (){
                 <div> Aqui Itens do Carrinho</div>
 
                 <div>
+                    
                    
                 </div>
             </Card>

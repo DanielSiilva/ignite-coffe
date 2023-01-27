@@ -45,13 +45,12 @@ export function Card({coffee}: CoffeeProps){
         setQuantify((state)=> state >= 1? state -1: 0)
     }
 
-    const handleAddToCart = () =>{
-        const addToCart = {
-            ...coffee,
-            quantity
+    const handleAddToCart = () => {
+        const coffeeToAdd = {
+          ...coffee,
+          quantity,
         }
-
-        addCoffeeToCart(addToCart)
+        addCoffeeToCart(coffeeToAdd)
     }
 
   

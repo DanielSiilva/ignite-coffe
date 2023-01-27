@@ -1,7 +1,8 @@
 import {useContext} from 'react'
-import {ContextCart} from '../contexts/ContexCart'
+import { CartContext } from '../context/ContexCart'
+
 
 
 export const useCart = () =>{
-    return useContext(ContextCart)
+    return useContext(CartContext)
 }
