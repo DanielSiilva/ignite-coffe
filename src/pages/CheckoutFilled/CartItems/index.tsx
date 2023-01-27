@@ -1,3 +1,4 @@
+import { useCart } from "../../../hooks/useCart";
 import { 
     ContainerCard,
     Card
@@ -11,8 +12,9 @@ import {
 
 
 export function CartItems (){
-
-
+     const {cartItems} = useCart()
+    
+     console.log(cartItems)
 
     return(
         <ContainerCard>
@@ -22,7 +24,7 @@ export function CartItems (){
                 <div> Aqui Itens do Carrinho</div>
 
                 <div>
-                    
+                   
                 </div>
             </Card>
                 
