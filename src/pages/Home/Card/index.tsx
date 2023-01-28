@@ -2,7 +2,7 @@
 
 import { Minus, Plus, ShoppingCartSimple } from "phosphor-react"
 import { useState } from "react"
-import { ButtonQuantity } from "../../../components/ButtonQuantity"
+
 
 
 import { priceFormatter } from "../../../utils/formatter"

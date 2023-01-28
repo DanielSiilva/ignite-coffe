@@ -2,13 +2,13 @@
 
 
 
-export function Carrintho (){
+export function Checkout (){
 
 
     return(
 
         <>
-            <h1>Carrinho</h1>
+            <h1>Page de Checkout</h1>
         </>
     )
 }
