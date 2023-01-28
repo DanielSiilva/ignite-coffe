@@ -1,7 +1,7 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from 'phosphor-react'
 import { useContext } from 'react'
 import { OrderContext } from '../../context/CartContext'
-import { CartsItem } from './CartItems'
+import { CartsItem } from './components/CartItems'
 import {AddressContainer,BuildingNumberInput, ButtonContainer, CityInput, ComplementInput, CompleteOrderContainer, ConfirmOrderContainer, FormContainer, InputsContainer, NeighborhoodInput,PaymentContainer, PaymentsLabel,PriceContainer,SelectedCoffeesContainer,StateInput,StreetInput,ZIPCodeInput} from './styled'
 
 

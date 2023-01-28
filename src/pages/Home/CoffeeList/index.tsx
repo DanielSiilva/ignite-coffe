@@ -1,19 +1,16 @@
 import { coffeesList } from "../../../data/coffees";
 import { Card } from "../Card";
 
-import { 
-    Container, 
-    Title, 
-} from "./styled";
+import * as C from './styled'
 
 
 export function CoffeeList(){
 
     return(
-        <Container>
-            <Title>
+        <C.Container>
+            <C.Title>
                 <h2>Nossos cafés</h2>
-            </Title>
+            </C.Title>
 
             <section>
                 {coffeesList.map((coffee)=>{
@@ -25,6 +22,6 @@ export function CoffeeList(){
                     )
                 })}
             </section>
-        </Container>
+        </C.Container>
     )
 }

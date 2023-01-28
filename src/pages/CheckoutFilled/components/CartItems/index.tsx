@@ -1,6 +1,6 @@
 import { Minus, Plus, Trash } from 'phosphor-react'
 import { useContext } from 'react'
-import { OrderContext } from '../../../context/CartContext'
+import { OrderContext } from '../../../../context/CartContext'
 
 import {
   AmountAndDeleteContainer,

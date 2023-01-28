@@ -48,7 +48,7 @@ export function Card({item}: ItemCardProps){
     }
 
     function handleAddItensToCart() {
-        addItemToCart(item)
+        addItemToCart(item as any)
     }
 
   

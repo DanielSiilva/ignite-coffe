@@ -1,16 +1,6 @@
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react"
 
-import {
-    Introduction,
-    Highlights,
-    Item01,
-    Item02, 
-    Item03, 
-    Item04, 
-    Logo, 
-    TitleSubtitle, 
-    Container,
-} from "./styled"
+import * as C from './styled'
 
 import Banner from "../../../assets/banner.svg"
 
@@ -18,9 +8,9 @@ export function Information (){
 
 
     return (
-        <Container>
-             <Introduction>
-                <TitleSubtitle>
+        <C.Container>
+             <C.Introduction>
+                <C.TitleSubtitle>
                     <h1>
                         Encontre o café perfeito para qualquer hora do dia
                     </h1>
@@ -28,36 +18,36 @@ export function Information (){
                     <p>
                         Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora
                     </p>
-                </TitleSubtitle>
+                </C.TitleSubtitle>
 
-                <Highlights>
-                   <Item01>
+                <C.Highlights>
+                   <C.Item01>
                         <ShoppingCart size={22} weight='fill' />
                         <p> Compra simples e segura</p>
-                   </Item01>
+                   </C.Item01>
                     
-                   <Item02>
+                   <C.Item02>
                         <Package size={22} weight='fill'/>
                         <p> Embalagem mantém o café intacto</p>
-                   </Item02>
+                   </C.Item02>
 
-                   <Item03>
+                   <C.Item03>
                         <Timer size={22}  weight='fill'/>
                         <p> Entrega rápida e rastreada</p>
-                   </Item03>
+                   </C.Item03>
 
-                   <Item04>
+                   <C.Item04>
                         <Coffee size={22} weight='fill' />
                         <p> O café chega fresquinho até você</p>
-                   </Item04>
-                </Highlights>
+                   </C.Item04>
+                </C.Highlights>
                 
                 
-            </Introduction>
+            </C.Introduction>
 
-            <Logo  src={Banner}/>
+            <C.Logo  src={Banner}/>
           
             
-        </Container>
+        </C.Container>
     )
 }
