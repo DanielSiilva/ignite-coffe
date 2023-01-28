@@ -204,7 +204,7 @@ export const ButtonContainer = styled.button`
   border: 0;
   border-radius: 6px;
 
-  background-color: ${(props) => props.theme['yellow-dark']};
+  background-color: ${(props) => props.theme['yellow']};
   color: ${(props) => props.theme.white};
 
   font-size: 0.875rem;
@@ -218,11 +218,11 @@ export const ButtonContainer = styled.button`
 
   &:disabled {
     cursor: not-allowed;
-    background-color: ${(props) => props.theme['yellow-light']};
+    background-color: ${(props) => props.theme['yellow']};
     opacity: 0.6;
   }
 
   &:not(:disabled):hover {
-    background-color: ${(props) => props.theme['yellow-light']};
+    background-color: ${(props) => props.theme['yellow-dark']};
   }
 `
