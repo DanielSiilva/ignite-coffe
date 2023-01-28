@@ -3,7 +3,7 @@ import { Container } from './styled';
 
 
 interface QuantifyProps{
-    quantify:number;
+    quantify: number;
     onAdd: () => void;
     subtract: () => void;
 }
