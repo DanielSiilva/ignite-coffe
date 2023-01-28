@@ -4,7 +4,7 @@ import { Router } from './Router/Routes'
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
 
-import {CartContextProvider} from './context/ContexCart'
+import {CartContextProvider} from './context/CartContext'
 
 export function App (){
 
