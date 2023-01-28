@@ -19,8 +19,8 @@ export function CoffeeList(){
                 {coffeesList.map((coffee)=>{
                     return(
                         <Card 
-                            key={coffee.id}
-                            coffee={coffee}
+                            key={coffee.id} 
+                            item={coffee}
                         />
                     )
                 })}

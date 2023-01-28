@@ -1,7 +1,8 @@
 
 
 import { Minus, Plus, ShoppingCartSimple } from "phosphor-react"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { OrderContext } from "../../../context/CartContext"
 
 
 
@@ -20,21 +21,21 @@ import {
 
 
 
-export interface Coffee{
-    id: number,
-    tags:string[],
-    name: string,
-    info: string,
-    image: string,
-    price: number
+interface ItemCardProps {
+    item: {
+        id: number,
+        tags:string[],
+        name: string,
+        info: string,
+        image: string,
+        price: number,
+        amount: number
+    }
 }
 
-interface CoffeeProps{
-    coffee: Coffee
-}
 
-export function Card({coffee}: CoffeeProps){
-    
+export function Card({item}: ItemCardProps){
+    const {addItemToCart} = useContext(OrderContext)
 
     const [quantity, setQuantify] = useState(0)
 
@@ -46,17 +47,19 @@ export function Card({coffee}: CoffeeProps){
         setQuantify((state)=> state >= 1? state -1: 0)
     }
 
- 
+    // function handleAddItensToCart() {
+    //     addItemToCart()
+    // }
 
   
 
     return(
         <Container>
-            <img src={coffee.image}/>
+            <img src={item.image}/>
             
             <Header>
                 <div>
-                    {coffee.tags.map((item)=>{
+                    {item.tags.map((item)=>{
                         return(
                         <p>{item}</p>
                         )
@@ -66,14 +69,14 @@ export function Card({coffee}: CoffeeProps){
             </Header>
             
             <TitleInfo>
-                <p>{coffee.name}</p>
-                <p>{coffee.info}</p>
+                <p>{item.name}</p>
+                <p>{item.info}</p>
             </TitleInfo>
 
             <ActionBuy>
                 <Price>
                     <p>R$</p>
-                    <p>{priceFormatter(coffee.price)}</p>
+                    <p>{priceFormatter(item.price)}</p>
                 </Price>
 
                 <Quantify>
@@ -107,4 +110,8 @@ export function Card({coffee}: CoffeeProps){
         
         </Container>
     )
+}
+
+function addItemToCart() {
+    throw new Error("Function not implemented.")
 }
