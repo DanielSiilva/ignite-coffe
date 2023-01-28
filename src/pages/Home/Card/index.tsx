@@ -4,6 +4,7 @@ import { ShoppingCartSimple } from "phosphor-react"
 import { useState } from "react"
 import { ButtonQuantity } from "../../../components/ButtonQuantity"
 import { useCart } from "../../../hooks/useCart"
+
 import { priceFormatter } from "../../../utils/formatter"
 import {
     Container,
@@ -45,13 +46,15 @@ export function Card({coffee}: CoffeeProps){
         setQuantify((state)=> state >= 1? state -1: 0)
     }
 
-    const handleAddToCart = () => {
-        const coffeeToAdd = {
-          ...coffee,
-          quantity,
+    function addToCart (){
+        const addItem ={
+            ...coffee,
+            quantity
         }
-        addCoffeeToCart(coffeeToAdd)
+
+        addCoffeeToCart(addItem as any)
     }
+    
 
   
 
@@ -90,7 +93,7 @@ export function Card({coffee}: CoffeeProps){
                         />
                     </div>
                     
-                    <ItemBuy onClick={handleAddToCart}>
+                    <ItemBuy onClick={addToCart}>
                         <ShoppingCartSimple size={22} weight="fill" />
                     </ItemBuy>
                 </Quantify>

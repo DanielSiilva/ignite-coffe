@@ -8,15 +8,14 @@ import {
 
 
 
-interface CoffeeCartCardProps {
-    coffee: CartItem
-}
 
 
 
-export function CartItems ({coffee}: CoffeeCartCardProps){
+
+export function CartItems (){
      const {cartItems} = useCart()
     
+     console.log(cartItems)
 
     return(
         <ContainerCard>
@@ -26,7 +25,9 @@ export function CartItems ({coffee}: CoffeeCartCardProps){
                 <div> Aqui Itens do Carrinho</div>
 
                 <div>
-                    
+                    {cartItems.map((item) =>{
+                        return <img key={item.id} src={item.image}/>
+                    })}
                    
                 </div>
             </Card>
