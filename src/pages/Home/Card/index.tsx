@@ -1,6 +1,6 @@
 
 
-import { ShoppingCartSimple } from "phosphor-react"
+import { Minus, Plus, ShoppingCartSimple } from "phosphor-react"
 import { useState } from "react"
 import { ButtonQuantity } from "../../../components/ButtonQuantity"
 
@@ -78,11 +78,24 @@ export function Card({coffee}: CoffeeProps){
 
                 <Quantify>
                     <div>
-                        <ButtonQuantity 
-                            quantify = {quantity}
-                            onAdd = {handleOnAdd}
-                            subtract = {handleOnSubtract}
+                       <Minus 
+                            onClick={handleOnSubtract}
+                            weight="bold"
+                       />
+
+                        <input 
+                            readOnly 
+                            value={quantity} 
+                            // type='number' 
+                            min={1} 
+                            max={99} 
                         />
+                       
+                       <Plus 
+                         onClick={handleOnAdd}
+                         weight="bold"
+                       
+                       />
                     </div>
                     
                     <ItemBuy>
