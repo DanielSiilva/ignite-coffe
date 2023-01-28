@@ -1,9 +1,15 @@
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from 'phosphor-react'
+import { useContext } from 'react'
+import { OrderContext } from '../../context/CartContext'
+import { CartsItem } from './CartItems'
 import {AddressContainer,BuildingNumberInput, ButtonContainer, CityInput, ComplementInput, CompleteOrderContainer, ConfirmOrderContainer, FormContainer, InputsContainer, NeighborhoodInput,PaymentContainer, PaymentsLabel,PriceContainer,SelectedCoffeesContainer,StateInput,StreetInput,ZIPCodeInput} from './styled'
 
 
 
 export function Checkout (){
+
+  const {itemsCart} = useContext(OrderContext)
+
 
     return (
         <FormContainer >
@@ -103,7 +109,21 @@ export function Checkout (){
           <SelectedCoffeesContainer>
             <h2>Cafés selecionados</h2>
             <ConfirmOrderContainer>
-              
+              {itemsCart.map((item) => {
+                return (
+                    <CartsItem
+                      key={item.id}
+                      name={item.id}
+                      amount={item.amount}
+                      image={item.image}
+                      price={item.price}
+                    />
+                  )
+             })}
+
+
+
+
     
               <PriceContainer>
                 <div>

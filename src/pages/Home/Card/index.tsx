@@ -47,9 +47,9 @@ export function Card({item}: ItemCardProps){
         setQuantify((state)=> state >= 1? state -1: 0)
     }
 
-    // function handleAddItensToCart() {
-    //     addItemToCart()
-    // }
+    function handleAddItensToCart() {
+        addItemToCart(item)
+    }
 
   
 
@@ -89,7 +89,7 @@ export function Card({item}: ItemCardProps){
                         <input 
                             readOnly 
                             value={quantity} 
-                            // type='number' 
+                            type='number' 
                             min={1} 
                             max={99} 
                         />
@@ -101,7 +101,7 @@ export function Card({item}: ItemCardProps){
                        />
                     </div>
                     
-                    <ItemBuy>
+                    <ItemBuy onClick={handleAddItensToCart}>
                         <ShoppingCartSimple size={22} weight="fill" />
                     </ItemBuy>
                 </Quantify>
