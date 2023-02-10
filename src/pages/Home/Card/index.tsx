@@ -1,8 +1,7 @@
 
 
 import { Minus, Plus, ShoppingCartSimple } from "phosphor-react"
-import { useContext, useState } from "react"
-import { OrderContext } from "../../../context/CartContext"
+
 
 
 
@@ -35,21 +34,7 @@ interface ItemCardProps {
 
 
 export function Card({item}: ItemCardProps){
-    const {addItemToCart} = useContext(OrderContext)
-
-    const [quantity, setQuantify] = useState(0)
-
-    function handleOnAdd(){
-        setQuantify((state)=> state + 1)
-    }
-
-    function handleOnSubtract(){
-        setQuantify((state)=> state >= 1? state -1: 0)
-    }
-
-    function handleAddItensToCart() {
-        addItemToCart(item as any)
-    }
+   
 
   
 
@@ -82,26 +67,25 @@ export function Card({item}: ItemCardProps){
                 <Quantify>
                     <div>
                        <Minus 
-                            onClick={handleOnSubtract}
+                            
                             weight="bold"
                        />
 
                         <input 
-                            readOnly 
-                            value={quantity} 
+                           
                             type='number' 
                             min={1} 
                             max={99} 
                         />
                        
                        <Plus 
-                         onClick={handleOnAdd}
+                         
                          weight="bold"
                        
                        />
                     </div>
                     
-                    <ItemBuy onClick={handleAddItensToCart}>
+                    <ItemBuy >
                         <ShoppingCartSimple size={22} weight="fill" />
                     </ItemBuy>
                 </Quantify>
@@ -112,6 +96,4 @@ export function Card({item}: ItemCardProps){
     )
 }
 
-function addItemToCart() {
-    throw new Error("Function not implemented.")
-}
+
