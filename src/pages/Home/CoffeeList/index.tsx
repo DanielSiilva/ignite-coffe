@@ -17,7 +17,7 @@ export function CoffeeList(){
                     return(
                         <Card 
                             key={coffee.id} 
-                            item={coffee}
+                            coffee={coffee}
                         />
                     )
                 })}

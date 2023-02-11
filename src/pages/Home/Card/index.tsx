@@ -6,6 +6,8 @@ import { Minus, Plus, ShoppingCartSimple } from "phosphor-react"
 
 
 import { priceFormatter } from "../../../utils/formatter"
+
+
 import {
     Container,
     Header,
@@ -18,35 +20,35 @@ import {
 
 } from "./styled"
 
-
-
-interface ItemCardProps {
-    item: {
-        id: number,
-        tags:string[],
-        name: string,
-        info: string,
-        image: string,
-        price: number,
-        amount: number
-    }
+interface ItemCard {
+    id: number,
+    tags:string[],
+    name: string,
+    info: string,
+    image: string,
+    price: number
 }
 
 
-export function Card({item}: ItemCardProps){
+interface ItemCardProps {
+    coffee: ItemCard
+}
+
+
+export function Card({coffee}: ItemCardProps){
    
 
   
 
     return(
         <Container>
-            <img src={item.image}/>
+            <img src={coffee.image}/>
             
             <Header>
                 <div>
-                    {item.tags.map((item)=>{
+                    {coffee.tags.map((item, index)=>{
                         return(
-                        <p>{item}</p>
+                        <p  key={index}>{item}</p>
                         )
                     })}
                 </div>
@@ -54,41 +56,17 @@ export function Card({item}: ItemCardProps){
             </Header>
             
             <TitleInfo>
-                <p>{item.name}</p>
-                <p>{item.info}</p>
+                <p>{coffee.name}</p>
+                <p>{coffee.info}</p>
             </TitleInfo>
 
             <ActionBuy>
                 <Price>
                     <p>R$</p>
-                    <p>{priceFormatter(item.price)}</p>
+                    <p>{priceFormatter(coffee.price)}</p>
                 </Price>
 
-                <Quantify>
-                    <div>
-                       <Minus 
-                            
-                            weight="bold"
-                       />
-
-                        <input 
-                           
-                            type='number' 
-                            min={1} 
-                            max={99} 
-                        />
-                       
-                       <Plus 
-                         
-                         weight="bold"
-                       
-                       />
-                    </div>
-                    
-                    <ItemBuy >
-                        <ShoppingCartSimple size={22} weight="fill" />
-                    </ItemBuy>
-                </Quantify>
+                
             </ActionBuy>
            
         
