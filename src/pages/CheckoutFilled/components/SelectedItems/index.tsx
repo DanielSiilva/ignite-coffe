@@ -7,9 +7,7 @@ export function SelectedItems (){
 
     return (
         <div>
-            <h1>Itens selecionados</h1>
-
-
+            <h2>Cafés selecionados</h2>
         </div>
     )
 }

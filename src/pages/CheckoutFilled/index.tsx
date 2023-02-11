@@ -3,7 +3,12 @@ import { FormCompleteOrder } from './components/FormCompleteOrder'
 import { SelectedItems } from './components/SelectedItems'
 
 
-import {} from './styled'
+import {
+  FormContainer,
+
+
+
+} from './styled'
 
 
 
@@ -13,10 +18,10 @@ export function Checkout (){
 
 
     return (
-        <form>
+        <FormContainer>
           <FormCompleteOrder />
           
           <SelectedItems />
-        </form>
+        </FormContainer>
       )
 }
