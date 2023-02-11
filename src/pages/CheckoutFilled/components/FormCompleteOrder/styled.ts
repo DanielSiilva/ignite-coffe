@@ -94,10 +94,6 @@ export const BaseInformation = styled.div`
     display: flex;
     justify-content: center;
     gap: 0.5rem;
-
-    svg{
-        color: ${props => props.theme['yellow-dark']};
-    }
     
     div{
 
@@ -222,4 +218,89 @@ export const ECity = styled(BaseInput)`
 
 export const Uf = styled(BaseInput)`
     width: 3.75rem;
+`
+
+
+export const PaymentMethod = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem;
+    gap: 2rem;
+
+    width: 40rem;
+    height: 12.938rem;
+
+    background: ${props => props.theme['base-card']};
+    border-radius: 6px;
+
+    
+
+`
+
+
+export const PaymentButton = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+
+    button{
+    
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem;
+        gap: 0.75rem;
+
+        width: 11.125rem;
+        height: 3.188rem;
+
+ 
+        background: ${props => props.theme['base-button']};
+        border-radius: 6px;
+        border: 0px;
+
+        flex: none;
+        order: 0;
+        flex-grow: 1;
+
+
+
+        //Font
+
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.75rem;
+        line-height: 160%;
+    
+        text-transform: uppercase;
+
+        color: ${props => props.theme['base-text']};
+
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+
+
+        svg{
+            color: ${props => props.theme['purple-dark']};
+        }
+
+
+        :hover{
+            cursor: pointer;
+            background: ${props => props.theme['base-hover']};
+        }
+
+        :focus{
+            background: ${props => props.theme['purple-light']};
+            
+            border: 1px solid ${props => props.theme['purple-dark']};
+            border-radius: 6px;
+        }
+    }
+
+
 `
