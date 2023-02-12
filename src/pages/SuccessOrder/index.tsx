@@ -1,11 +1,32 @@
 
+import { 
+    SuccessContainer,
+    OrderDetails,
+    TitleAndSubtitle
+} from "./styled";
 
 
-export function SucessOrder (){
+
+export function SuccessOrder (){
 
     return(
-        <>
-            <h1>Page Sucess Order</h1>
-        </>
+        <SuccessContainer>
+            <OrderDetails>
+                <TitleAndSubtitle>
+                    <h2>Uhu! Pedido confirmado</h2>
+                    <p>Agora é só aguardar que logo o café chegará até você</p>
+                </TitleAndSubtitle>
+
+                <div>
+
+                </div>
+            </OrderDetails>
+
+            {/* Bannher */}
+            <div>
+
+
+            </div>
+        </SuccessContainer>
     )
 }
