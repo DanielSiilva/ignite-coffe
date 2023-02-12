@@ -3,13 +3,10 @@ import styled from "styled-components";
 
 export const SuccessContainer = styled.div`
     display: flex;
-    gap: 5rem;
+    align-items: flex-end;
+    gap: 4rem;
 
     padding: 3rem 10rem;
-
-
-    border: 1px solid red;
-
 
 `
 
@@ -18,11 +15,6 @@ export const OrderDetails = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
-
-
-    border: 1px solid black;
-
 
 `
 
@@ -77,7 +69,7 @@ export const Details = styled.div`
 export const Banner = styled.img`
     width: 30.75rem;
     height: 18.313rem;
- 
+
 `
 
 export const BaseOrder = styled.section`
@@ -100,8 +92,6 @@ const BaseIcon = styled.div`
 
     border-radius: 100%;
 
-   
-
 `
 
 export const Icon1 = styled(BaseIcon)`
@@ -113,11 +103,41 @@ export const Icon1 = styled(BaseIcon)`
 
 `
 
+export const Icon2 = styled(BaseIcon)`
+   background: ${props => props.theme['yellow']};
+
+    svg{
+        color: ${props => props.theme['white']};
+    }
+
+`
+
+export const Icon3 = styled(BaseIcon)`
+   background: ${props => props.theme['yellow-dark']};
+
+    svg{
+        color: ${props => props.theme['white']};
+    }
+
+`
 
 
 export const InformationRequests = styled.div`
     display: flex;
     flex-direction: column;
     
+    p{
+        display: flex;
+        gap: 4px;
+    }
+
+    span{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 130%;
+        color: ${props => props.theme['base-text']};
+    }
 
 `

@@ -1,4 +1,4 @@
-import { MapPin } from 'phosphor-react';
+import { CurrencyDollar, MapPin, Timer } from 'phosphor-react';
 import Illustration from '../../assets/Illustration.svg'
 
 
@@ -11,7 +11,9 @@ import {
     Details,
     BaseOrder,
     Icon1,
-    InformationRequests
+    InformationRequests,
+    Icon2,
+    Icon3
 } from "./styled";
 
 
@@ -35,13 +37,43 @@ export function SuccessOrder (){
                         </Icon1>
 
                         <InformationRequests>
+                            {/* Informççaões que vão vir do reducer */}
 
                             <p>
                                 Entrega em 
                                 <span>Rua João Daniel Martinelli, 102</span>
                             </p>
 
+                            {/* Informççaões que vão vir do reducer */}
                             <p>Farrapos - Porto Alegre, RS</p>
+                        </InformationRequests>
+                    </BaseOrder>
+
+                    <BaseOrder>
+                        <Icon2>
+                            <Timer
+                                weight='fill'
+                            />
+                        </Icon2>
+
+                        <InformationRequests>
+                            <p>Previsão de entrega</p>
+                            <span>20 min - 30 min </span> 
+                        </InformationRequests>
+                    </BaseOrder>
+
+                    <BaseOrder>
+                        <Icon3>
+                            <CurrencyDollar 
+                                weight='fill'
+                            />
+                        </Icon3>
+
+                        <InformationRequests>
+                            <p>Pagamento na entrega</p>
+
+                            {/* Informççaões que vão vir do reducer */}
+                            <span>Cartão de Crédito </span> 
                         </InformationRequests>
                     </BaseOrder>
 
