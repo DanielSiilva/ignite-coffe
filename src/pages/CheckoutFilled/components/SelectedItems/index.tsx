@@ -39,7 +39,7 @@ export function SelectedItems (){
                     </InformationRequest>
 
 
-                    <FinishButton>
+                    <FinishButton type='submit'>
                         confirmar pedido
                     </FinishButton>
                 </FinalizeOrder>

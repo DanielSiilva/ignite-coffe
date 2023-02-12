@@ -26,7 +26,11 @@ import {
 
 
   export function OrderContextProvider({ children }: OrderContextProviderProps) {
+    //Precisar de um estado de pedido, que guarde as informações: enderenço e metodo de pagamento
+
     
+
+
   
     return (
       <OrderContext.Provider

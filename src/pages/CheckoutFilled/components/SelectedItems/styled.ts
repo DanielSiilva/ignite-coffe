@@ -96,7 +96,7 @@ export const InformationRequest = styled.section`
 `
 
 
-export const FinishButton = styled.div`
+export const FinishButton = styled.button`
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -111,6 +111,7 @@ export const FinishButton = styled.div`
 
     background: ${props => props.theme['yellow-dark']};
     border-radius: 6px;
+    border: 0px;
 
     cursor: pointer;
 

@@ -1,4 +1,5 @@
 import { Bank, CreditCard, CurrencyDollarSimple, MapPinLine, Money } from "phosphor-react";
+import { useFormContext } from "react-hook-form";
 
 import { 
     BaseInformation,
@@ -22,6 +23,10 @@ import {
 
 
 export function FormCompleteOrder(){
+    const {register} = useFormContext()
+
+
+
 
     return (
         <FormContainer>
@@ -44,23 +49,42 @@ export function FormCompleteOrder(){
                 </BaseInformation>
 
                 <AddressContainer>
-                    <Cpf placeholder="CPF" />
+                    <Cpf 
+                        placeholder="CPF" 
+                        {...register('cpf')}
+                    />
 
-                    <Street placeholder="Rua" />
+                    <Street 
+                        placeholder="Rua" 
+                        {...register('Street')}
+                    />
 
 
                     <NumberAndComplement>
-                        <Number placeholder="Número" />
+                        <Number 
+                            placeholder="Número" {...register('Number')}
+                        />
 
-                        <Complement placeholder="Complemento" />
+                        <Complement 
+                            placeholder="Complemento" 
+                            {...register('Complement')}
+                        />
                     </NumberAndComplement>
                     
                     <City>
-                        <Neighborhood placeholder="Bairro" />
+                        <Neighborhood 
+                            placeholder="Bairro"
+                            {...register('Neighborhood')}
+                         />
 
-                        <ECity placeholder="Cidade" />
+                        <ECity 
+                            placeholder="Cidade" {...register('City')}
+                        />
 
-                        <Uf placeholder="UF" />      
+                        <Uf    
+                            placeholder="UF"
+                            {...register('Uf')} 
+                        />      
                     </City>
                     
                 </AddressContainer>
