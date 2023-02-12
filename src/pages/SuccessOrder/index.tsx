@@ -1,8 +1,17 @@
+import { MapPin } from 'phosphor-react';
+import Illustration from '../../assets/Illustration.svg'
+
+
 
 import { 
     SuccessContainer,
     OrderDetails,
-    TitleAndSubtitle
+    TitleAndSubtitle,
+    Banner,
+    Details,
+    BaseOrder,
+    Icon1,
+    InformationRequests
 } from "./styled";
 
 
@@ -17,16 +26,31 @@ export function SuccessOrder (){
                     <p>Agora é só aguardar que logo o café chegará até você</p>
                 </TitleAndSubtitle>
 
-                <div>
+                <Details>
+                    <BaseOrder>
+                        <Icon1>
+                            <MapPin 
+                                weight='fill'
+                            />
+                        </Icon1>
 
-                </div>
+                        <InformationRequests>
+
+                            <p>
+                                Entrega em 
+                                <span>Rua João Daniel Martinelli, 102</span>
+                            </p>
+
+                            <p>Farrapos - Porto Alegre, RS</p>
+                        </InformationRequests>
+                    </BaseOrder>
+
+                </Details>
             </OrderDetails>
 
             {/* Bannher */}
-            <div>
-
-
-            </div>
+           
+           <Banner src={Illustration} />
         </SuccessContainer>
     )
 }
