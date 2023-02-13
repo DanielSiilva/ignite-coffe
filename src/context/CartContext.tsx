@@ -1,13 +1,25 @@
-import {
+  import {
     createContext,
     ReactNode,
-} from 'react'
+  } from 'react'
  
-  
- 
-  
-  interface OrderContextType {
+
+  export interface Order {
     
+  }
+
+
+
+
+  interface CreateOrderData {
+    task: string
+    minutesAmount: number
+  }
+    
+
+
+  interface OrderContextType {
+    createNewOrder: (data: CreateOrderData) => void
   }
 
 
@@ -28,14 +40,23 @@ import {
   export function OrderContextProvider({ children }: OrderContextProviderProps) {
     //Precisar de um estado de pedido, que guarde as informações: enderenço e metodo de pagamento
 
+    function createNewOrder(data: CreateOrderData) {
+
+      
+
+      
+    }
     
+
+
+
 
 
   
     return (
       <OrderContext.Provider
         value={{
-          
+          createNewOrder
 
           
         }}
