@@ -1,6 +1,7 @@
 
 
 import { Minus, Plus, ShoppingCartSimple } from "phosphor-react"
+import { InputQuantity } from "../../../components/InputQuantity"
 
 
 
@@ -13,10 +14,7 @@ import {
     Header,
     TitleInfo,
     ActionBuy,
-    Price,
-    ItemBuy,
-    Quantify,
-    
+    Price
 
 } from "./styled"
 
@@ -66,10 +64,11 @@ export function Card({coffee}: ItemCardProps){
                     <p>{priceFormatter(coffee.price)}</p>
                 </Price>
 
+                <InputQuantity/> 
                 
             </ActionBuy>
            
-        
+            
         </Container>
     )
 }

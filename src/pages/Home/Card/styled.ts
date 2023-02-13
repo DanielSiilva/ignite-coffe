@@ -93,7 +93,7 @@ export const ActionBuy = styled.div`
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    gap: 0.5rem;
+    /* gap: 0.5rem; */
 
     width: 12.5rem;
 
@@ -123,72 +123,5 @@ export const Price = styled.div`
 
         color: ${props => props.theme['base-title']};
     }
-`
-
-export const Quantify = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-
-    div:nth-child(1) {
-        display: flex;
-        align-items: center;
-        gap:4px;
-    
-        padding: 8px;
-        border-radius: 6px;
-
-        background-color: ${(props) => props.theme['base-input']};
-        color: ${(props) => props.theme['purple-dark']};
-
-        svg{
-            cursor: pointer;
-        }
-
-       
-        input {
-            border: 0;
-            background-color: transparent;
-        
-            width: 1.5rem;
-
-            font-weight: bold;
-            text-align: center;
-            
-
-            border: 1px solid red;
-        }
-  }
-
-`
-
-
-
-
-
-export const ItemBuy = styled.button`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 8px;
-    gap: 8px;
-
-    width: 38px;
-    height: 38px;
-
-    background:${props => props.theme['purple-dark']};
-    border-radius: 6px;
-
-    :hover{
-        cursor: pointer;
-        background:${props => props.theme['purple']};
-    }
-    
-    svg{
-        color: ${props => props.theme['background']};
-    }
-
 `
 
