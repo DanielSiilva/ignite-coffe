@@ -1,21 +1,16 @@
-import {ActionType, CoffeeContext} from './reducer'
+import { actionType, CoffeeContextCart } from './reducer'
 
-export enum CoffeeActions{
-  ADD_NEW_COFFEE =  'ADD_NEW_COFFEE',
-  REMOVE_NEW_COFFEE = 'REMOVE_NEW_COFFEE',
-  REMOVE_ITEM_CART = 'REMOVE_ITEM_CART',
-  ADD_ITEM_CART =  'ADD_ITEM_CART',
-  CLEAR_ITEM_CART = 'CLEAR_ITEM_CART'
+export enum CoffeeActions {
+  ADD_NEW_COFFEE_CART = 'ADD_NEW_COFFEE_CART',
+  REMOVE_NEW_COFFEE_CART = 'REMOVE_NEW_COFFEE_CART',
+  REMOVE_ITEM_COFFEE_CART = 'REMOVE_ITEM_COFFEE_CART',
+  ADD_ITEM_COFFEE_CART = 'ADD_ITEM_COFFEE_CART',
+  CLEAR_ITEM_COFFEE_CART = 'CLEAR_ITEM_COFFEE_CART',
 }
 
-export function addNewCoffeeCartAction(newCoffee: CoffeeContext): ActionType{
+export function addNewCoffeeCartAction(newCoffee: CoffeeContextCart): actionType {
   return {
-    actionType: CoffeeActions.ADD_NEW_COFFEE,
-    payload: newCoffee
+    ActionType: CoffeeActions.ADD_NEW_COFFEE_CART,
+    payload: newCoffee,
   }
 }
-
-
-
-
-

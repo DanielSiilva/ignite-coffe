@@ -1,55 +1,65 @@
-import { createContext, ReactNode, useReducer } from "react";
-import { addNewCoffeeCartAction } from "../reducers/actions";
+import { createContext, ReactNode, useEffect, useReducer } from 'react'
+import { CartReducer, CoffeeContextCart } from '../reducers/reducer'
 
-import {CartReducer, CoffeeContext} from '../reducers/reducer'
 
-interface CoffeeCartContextTypes {
-  coffee: CoffeeContext[],
-  addCoffeeCart: (data: CoffeeContext) => void
+import {
+ addNewCoffeeCartAction
+} from '../reducers/actions'
+
+interface CoffeeShopContextTypes {
+  coffees: CoffeeContextCart[],
+  addNewCoffeeCart: (data: CoffeeContextCart) => void,
+  
 }
 
+export const CoffeeShopContext = createContext({} as CoffeeShopContextTypes)
 
-export const CoffeeCartContext = createContext({} as CoffeeCartContextTypes)
-
-interface CoffeeContextProps{
+interface CoffeeShopContextProps {
   children: ReactNode
 }
 
-
-export function CoffeeCartProvider({children}: CoffeeContextProps){
-  const [coffeeState, dispatch] = useReducer(
+export function CoffeeShopProvider({ children }: CoffeeShopContextProps) {
+  const [cartState, dispatch] = useReducer(
     CartReducer,
-    {coffee: []},
+    { coffees: [] },
+    () => {
+      const storedStateJSON = localStorage.getItem(
+        '@coffee-delivery-state-1.0.0',
+      )
 
-    () =>{
-
-
-      return{
-        coffee: []
+      if (storedStateJSON) {
+        return JSON.parse(storedStateJSON)
       }
-    }
+
+      return {
+        coffees: [],
+      }
+    },
   )
 
+  useEffect(() => {
+    const stateJSON = JSON.stringify(cartState)
 
-  function addCoffeeCart(data: CoffeeContext) {
+    localStorage.setItem('@coffee-delivery-state-1.0.0', stateJSON)
+  }, [cartState])
+
+  
+  function addNewCoffeeCart(data: CoffeeContextCart){
     dispatch(addNewCoffeeCartAction(data))
   }
 
 
 
+  const { coffees } = cartState
 
-
-   const {coffee} = coffeeState
-
-  return(
-    <CoffeeCartContext.Provider 
+  return (
+    <CoffeeShopContext.Provider
       value={{
-        coffee,
-        addCoffeeCart
+        coffees,
+        addNewCoffeeCart
       }}
     >
-
       {children}
-    </CoffeeCartContext.Provider>
+    </CoffeeShopContext.Provider>
   )
 }

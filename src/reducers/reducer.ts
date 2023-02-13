@@ -1,6 +1,6 @@
-import {CoffeeActions} from './actions'
+import { CoffeeActions } from './actions'
 
-export interface CoffeeContext{
+export interface CoffeeContextCart {
     id: number,
     tags:string[],
     name: string,
@@ -8,49 +8,40 @@ export interface CoffeeContext{
     image: string,
     price: number,
     quantity: number
-    
 }
 
-
-interface CartState{
-    coffee: CoffeeContext[],
+interface CoffeeState {
+  coffees: CoffeeContextCart[]
 }
 
-export interface ActionType {
-    actionType: string,
-    payload: any,
+export interface actionType {
+  ActionType: string
+  payload: any
 }
 
+export function CartReducer(
+  state: CoffeeState,
+  action: actionType,
+): CoffeeState {
+  switch (action.ActionType) {
+    case CoffeeActions.ADD_NEW_COFFEE_CART: {
+      const coffeeExitsTheCart = state.coffees.findIndex(
+        (coffee) => coffee.id === action.payload.id,
+      )
 
-export function CartReducer(state: CartState, action: ActionType) {
-  switch (action.actionType) {
-    case CoffeeActions.ADD_NEW_COFFEE:{
+      if (coffeeExitsTheCart < 0) {
+        return {
+          coffees: [...state.coffees, action.payload],
 
-        const coffeeExitsTheCart = state.coffee.findIndex((coffee) => coffee.id === action.payload.id)
-
-        if(coffeeExitsTheCart < 0){
-            return {
-                coffee: [...state.coffee, action.payload]
-            }
         }
-
+      } 
     }
-    
 
     
-    
-    
+
     default:
-      return state
+      return {
+        coffees: state.coffees,
+      }
   }
-
-    
-          
-            
-    
-
-          
-    
-    
-  
 }
