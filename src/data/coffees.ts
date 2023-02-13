@@ -5,7 +5,8 @@ export interface Coffee{
     name: string,
     info: string,
     image: string,
-    price: number
+    price: number,
+    quantity: number
     
 }
 
@@ -21,6 +22,7 @@ export const coffeesList: Coffee[] = [
       info: "O tradicional café feito com água quente e grãos moídos",
       image: "../../public/Coffes/Expresso.svg",
       price: 9.9,
+      quantity: 0,
       
     },
     {
@@ -30,7 +32,7 @@ export const coffeesList: Coffee[] = [
       info: "Expresso diluído, menos intenso que o tradicional",
       image: "../../public/Coffes/Americano.svg",
       price: 9.9,
-      
+      quantity: 0,
     },
     {
       id: 3,
@@ -39,7 +41,7 @@ export const coffeesList: Coffee[] = [
       info: "Café expresso tradicional com espuma cremosa",
       image: "../../public/Coffes/ExpressoCremoso.svg",
       price: 9.9,
-      
+      quantity: 0,
     },
     {
       id: 4,
@@ -48,7 +50,7 @@ export const coffeesList: Coffee[] = [
       info: "Bebida preparada com café expresso e cubos de gelo",
       image: "../../public/Coffes/CafeGelado.svg",
       price: 9.9,
-      
+      quantity: 0,
     },
     {
       id: 5,
@@ -57,7 +59,7 @@ export const coffeesList: Coffee[] = [
       info: "Meio a meio de expresso tradicional com leite vaporizado",
       image: "../../public/Coffes/CafecomLeite.svg",
       price: 9.9,
-      
+      quantity: 0,
     },
     {
       id: 6,
@@ -66,7 +68,7 @@ export const coffeesList: Coffee[] = [
       info: "Uma dose de café expresso com o dobro de leite e espuma cremosa",
       image: "../../public/Coffes/Latte.svg",
       price: 9.9,
-      
+      quantity: 0,
     },
     {
       id: 7,
@@ -75,7 +77,7 @@ export const coffeesList: Coffee[] = [
       info: "Bebida com canela feita de doses iguais de café, leite e espuma",
       image: "../../public/Coffes/Capuccino.svg",
       price: 9.9,
-      
+      quantity: 0,
     },
     {
       id: 8,
@@ -84,7 +86,7 @@ export const coffeesList: Coffee[] = [
       info: "Café expresso misturado com um pouco de leite quente e espuma",
       image: "../../public/Coffes/Macchiato.svg",
       price: 9.9,
-      
+      quantity: 0,
     },
     {
       id: 9,
@@ -93,7 +95,7 @@ export const coffeesList: Coffee[] = [
       info: "Café expresso com calda de chocolate, pouco leite e espuma",
       image: "../../public/Coffes/Mochaccino.svg",
       price: 9.9,
-      
+      quantity: 0,
     },
     {
       id: 10,
@@ -102,7 +104,7 @@ export const coffeesList: Coffee[] = [
       info: "Bebida feita com chocolate dissolvido no leite quente e café",
       image: "../../public/Coffes/Americano.svg",
       price: 9.9,
-      
+      quantity: 0,
     },
     {
       id: 11,
@@ -111,7 +113,7 @@ export const coffeesList: Coffee[] = [
       info: "Drink gelado de café expresso com rum, creme de leite e hortelã",
       image: "../../public/Coffes/Cubano.svg",
       price: 9.9,
-      
+      quantity: 0,
     },
     {
       id: 12,
@@ -120,7 +122,7 @@ export const coffeesList: Coffee[] = [
       price: 19.9,
       tags: ['especial'],
       image: "../../public/Coffes/Havaiano.svg",
-      
+      quantity: 0,
       
     },
     {
@@ -130,7 +132,7 @@ export const coffeesList: Coffee[] = [
       price: 25.9,
       tags: ['especial'],
       image: "../../public/Coffes/Arabe.svg",
-      
+      quantity: 0,
       
     },
     {
@@ -140,7 +142,7 @@ export const coffeesList: Coffee[] = [
       price: 22.9,
       tags: ['especial', 'alcoólico'],
       image: "../../public/Coffes/Irlandes.svg",
-      
+      quantity: 0,
       
     },
      
