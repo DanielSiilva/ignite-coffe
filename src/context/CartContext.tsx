@@ -1,68 +1,55 @@
-  import {
-    createContext,
-    ReactNode,
-  } from 'react'
- 
+import { createContext, ReactNode, useReducer } from "react";
+import { addNewCoffeeCartAction } from "../reducers/actions";
 
-  export interface Order {
-    
-  }
+import {CartReducer, CoffeeContext} from '../reducers/reducer'
 
-
+interface CoffeeCartContextTypes {
+  coffee: CoffeeContext[],
+  addCoffeeCart: (data: CoffeeContext) => void
+}
 
 
-  interface CreateOrderData {
-    task: string
-    minutesAmount: number
-  }
-    
+export const CoffeeCartContext = createContext({} as CoffeeCartContextTypes)
+
+interface CoffeeContextProps{
+  children: ReactNode
+}
 
 
-  interface OrderContextType {
-    createNewOrder: (data: CreateOrderData) => void
-  }
+export function CoffeeCartProvider({children}: CoffeeContextProps){
+  const [coffeeState, dispatch] = useReducer(
+    CartReducer,
+    {coffee: []},
+
+    () =>{
 
 
-  
-  export const OrderContext = createContext({} as OrderContextType)
-  
-
-
-  interface OrderContextProviderProps {
-    children: ReactNode
-  }
-  
-
-
-
-
-
-  export function OrderContextProvider({ children }: OrderContextProviderProps) {
-    //Precisar de um estado de pedido, que guarde as informações: enderenço e metodo de pagamento
-
-    function createNewOrder(data: CreateOrderData) {
-
-      
-
-      
+      return{
+        coffee: []
+      }
     }
-    
+  )
 
 
-
-
-
-  
-    return (
-      <OrderContext.Provider
-        value={{
-          createNewOrder
-
-          
-        }}
-      >
-        {children}
-      </OrderContext.Provider>
-    )
+  function addCoffeeCart(data: CoffeeContext) {
+    dispatch(addNewCoffeeCartAction(data))
   }
-  
+
+
+
+
+
+   const {coffee} = coffeeState
+
+  return(
+    <CoffeeCartContext.Provider 
+      value={{
+        coffee,
+        addCoffeeCart
+      }}
+    >
+
+      {children}
+    </CoffeeCartContext.Provider>
+  )
+}

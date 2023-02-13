@@ -1,20 +1,21 @@
-import {Order} from './reducer'
+import {ActionType, CoffeeContext} from './reducer'
 
-export enum ActionTypes {
-  ADD_NEW_ORDER = 'ADD_NEW_ORDER',
-  
+export enum CoffeeActions{
+  ADD_NEW_COFFEE =  'ADD_NEW_COFFEE',
+  REMOVE_NEW_COFFEE = 'REMOVE_NEW_COFFEE',
+  REMOVE_ITEM_CART = 'REMOVE_ITEM_CART',
+  ADD_ITEM_CART =  'ADD_ITEM_CART',
+  CLEAR_ITEM_CART = 'CLEAR_ITEM_CART'
 }
 
-
-
-export function addNewCycleAction(newOrder: Order) {
+export function addNewCoffeeCartAction(newCoffee: CoffeeContext): ActionType{
   return {
-    type: ActionTypes.ADD_NEW_ORDER,
-    payload: {
-      newOrder,
-    },
+    actionType: CoffeeActions.ADD_NEW_COFFEE,
+    payload: newCoffee
   }
 }
+
+
 
 
 

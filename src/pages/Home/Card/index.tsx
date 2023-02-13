@@ -1,10 +1,5 @@
 
-
-import { Minus, Plus, ShoppingCartSimple } from "phosphor-react"
 import { InputQuantity } from "../../../components/InputQuantity"
-
-
-
 
 import { priceFormatter } from "../../../utils/formatter"
 

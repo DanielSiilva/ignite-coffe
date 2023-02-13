@@ -1,31 +1,41 @@
+import {CoffeeActions} from './actions'
 
-
-import { produce } from 'immer'
-
-import {ActionTypes} from './actions'
-
-export interface Order {
-    cpf: string,
-    City: string,
-    Complement: string,
-    Neighborhood: string,
-    Number: string,
-    Street: string,
-    Uf: string
-}
-
-export interface OrderState{
-    orders: Order[],
-}
-
-
-export function orderReducer(state: OrderState, action: any) {
-  switch (action.type) {
+export interface CoffeeContext{
+    id: number,
+    tags:string[],
+    name: string,
+    info: string,
+    image: string,
+    price: number,
+    quantity: number
     
-    case ActionTypes.ADD_NEW_ORDER:
-        return produce(state, (draft)=>{
-            draft.orders.push(action.payload.newOrder)
-        })
+}
+
+
+interface CartState{
+    coffee: CoffeeContext[],
+}
+
+export interface ActionType {
+    actionType: string,
+    payload: any,
+}
+
+
+export function CartReducer(state: CartState, action: ActionType) {
+  switch (action.actionType) {
+    case CoffeeActions.ADD_NEW_COFFEE:{
+
+        const coffeeExitsTheCart = state.coffee.findIndex((coffee) => coffee.id === action.payload.id)
+
+        if(coffeeExitsTheCart < 0){
+            return {
+                coffee: [...state.coffee, action.payload]
+            }
+        }
+
+    }
+    
 
     
     
