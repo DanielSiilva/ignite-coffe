@@ -1,14 +1,14 @@
-import { Cookie } from 'phosphor-react'
+
 import { useContext } from 'react'
 import { CoffeeShopContext } from '../../../../context/CartContext'
+import { CartSelect } from './CartSelect'
+
 import {
     ItemsContainer,
     FinalizeOrder,
     ContainerOrder,
     InformationRequest,
-    FinishButton
-
-
+    FinishButton,
 } from './styled'
 
 
@@ -21,11 +21,12 @@ export function SelectedItems (){
             <h2>Cafés selecionados</h2>
 
             <ContainerOrder>
-                {coffee.map((item) => {
+                {coffee.map((coffee) => {
                     return (
-                        <div>
-                            <img src={item.image} />
-                        </div>
+                        <CartSelect
+                            key={coffee.id} 
+                            coffee ={ coffee}
+                        />
                     )
                 })}
 

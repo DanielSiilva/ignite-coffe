@@ -129,3 +129,4 @@ export const FinishButton = styled.button`
     font-stretch: 100;
 
 `
+
