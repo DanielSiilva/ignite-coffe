@@ -22,24 +22,21 @@ export function removeCoffeeCartAction(id: number): actionType {
   }
 }
 
-
-export function addItemToCartAction(newCoffee: CoffeeContextCart): actionType{
-  return {
-    ActionType: CoffeeActions.ADD_ITEM_COFFEE_CART,
-    payload: newCoffee,
-  }
-}
-
-
-export function removeItemToCartAction(newCoffee: CoffeeContextCart): actionType{
+export function removeItemCoffeeCartAction(newCoffee: CoffeeContextCart): actionType {
   return {
     ActionType: CoffeeActions.REMOVE_ITEM_COFFEE_CART,
     payload: newCoffee,
   }
 }
 
+export function addItemCoffeeCartActions(newCoffee: CoffeeContextCart): actionType {
+  return {
+    ActionType: CoffeeActions.ADD_ITEM_COFFEE_CART,
+    payload: newCoffee,
+  }
+}
 
-export function clearCartAction(): actionType{
+export function clearItemCoffeeCartActions(): actionType {
   return {
     ActionType: CoffeeActions.CLEAR_ITEM_COFFEE_CART,
     payload: [],

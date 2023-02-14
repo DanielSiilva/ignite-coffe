@@ -1,15 +1,21 @@
 import { createContext, ReactNode, useEffect, useReducer } from 'react'
-import { CartReducer, CoffeeContextCart } from '../reducers/reducer'
-
+import { CoffeeContextCart, coffeeReducer } from '../reducers/reducer'
 
 import {
- addNewCoffeeCartAction
+  addItemCoffeeCartActions,
+  addNewCoffeeCartAction,
+  clearItemCoffeeCartActions,
+  removeCoffeeCartAction,
+  removeItemCoffeeCartAction,
 } from '../reducers/actions'
 
 interface CoffeeShopContextTypes {
-  coffees: CoffeeContextCart[],
-  addNewCoffeeCart: (data: CoffeeContextCart) => void,
-  
+  coffee: CoffeeContextCart[]
+  addCoffeeShopCart: (data: CoffeeContextCart) => void
+  addItemCoffeeShopCart: (data: CoffeeContextCart) => void
+  removeCoffeeShopCart: (idCoffee: number) => void
+  removeItemCoffeeShopCart: (data: CoffeeContextCart) => void
+  clearItemCoffeeShopCart: () => void
 }
 
 export const CoffeeShopContext = createContext({} as CoffeeShopContextTypes)
@@ -18,10 +24,10 @@ interface CoffeeShopContextProps {
   children: ReactNode
 }
 
-export function CoffeeShopProvider({ children }: CoffeeShopContextProps) {
-  const [cartState, dispatch] = useReducer(
-    CartReducer,
-    { coffees: [] },
+export function CoffeeCartProvider({ children }: CoffeeShopContextProps) {
+  const [coffeeState, dispatch] = useReducer(
+    coffeeReducer,
+    { coffee: [] },
     () => {
       const storedStateJSON = localStorage.getItem(
         '@coffee-delivery-state-1.0.0',
@@ -32,31 +38,48 @@ export function CoffeeShopProvider({ children }: CoffeeShopContextProps) {
       }
 
       return {
-        coffees: [],
+        coffee: [],
       }
     },
   )
 
   useEffect(() => {
-    const stateJSON = JSON.stringify(cartState)
+    const stateJSON = JSON.stringify(coffeeState)
 
     localStorage.setItem('@coffee-delivery-state-1.0.0', stateJSON)
-  }, [cartState])
+  }, [coffeeState])
 
-  
-  function addNewCoffeeCart(data: CoffeeContextCart){
+  function addCoffeeShopCart(data: CoffeeContextCart) {
     dispatch(addNewCoffeeCartAction(data))
   }
 
+  function removeCoffeeShopCart(id: number) {
+    dispatch(removeCoffeeCartAction(id))
+  }
 
+  function removeItemCoffeeShopCart(data: CoffeeContextCart) {
+    dispatch(removeItemCoffeeCartAction(data))
+  }
 
-  const { coffees } = cartState
+  function addItemCoffeeShopCart(data: CoffeeContextCart) {
+    dispatch(addItemCoffeeCartActions(data))
+  }
+
+  function clearItemCoffeeShopCart() {
+    dispatch(clearItemCoffeeCartActions())
+  }
+
+  const { coffee } = coffeeState
 
   return (
     <CoffeeShopContext.Provider
       value={{
-        coffees,
-        addNewCoffeeCart
+        addCoffeeShopCart,
+        coffee,
+        removeCoffeeShopCart,
+        removeItemCoffeeShopCart,
+        addItemCoffeeShopCart,
+        clearItemCoffeeShopCart,
       }}
     >
       {children}

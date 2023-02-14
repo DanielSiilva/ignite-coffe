@@ -1,7 +1,6 @@
 
-import { CaretCircleDoubleDown, CarSimple, ShoppingCartSimple } from "phosphor-react"
+import {ShoppingCartSimple } from "phosphor-react"
 import { useContext, useState } from "react"
-import { date } from "zod"
 import { InputQuantity } from "../../../components/InputQuantity"
 import { CoffeeShopContext } from "../../../context/CartContext"
 
@@ -36,12 +35,12 @@ interface ItemCardProps {
 
 export function Card({coffee}: ItemCardProps){
     
-    const {addNewCoffeeCart} = useContext(CoffeeShopContext)
+    const {addCoffeeShopCart} = useContext(CoffeeShopContext)
 
     const [amount, setAmount] = useState(coffee.quantity)
     
     function handleAddCoffeeCart(data: ItemCard){
-        addNewCoffeeCart(data)
+        addCoffeeShopCart(data)
         setAmount(1)
     }
 
