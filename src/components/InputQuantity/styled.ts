@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const InputQuantityContainer = styled.div`
  
   background-color: ${props => props.theme['base-button']};
-  max-width: 4.25rem;
+  max-width: 5rem;
 
   border-radius: 6px;
   display: flex;
