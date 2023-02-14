@@ -42,6 +42,7 @@ export const InputQuantityContainer = styled.div`
 
     &:hover {
       color: ${props => props.theme['purple-dark']};
+      cursor: pointer;
     }
   }
 `

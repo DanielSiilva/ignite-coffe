@@ -1,6 +1,7 @@
 
 import { CaretCircleDoubleDown, CarSimple, ShoppingCartSimple } from "phosphor-react"
-import { useContext } from "react"
+import { useContext, useState } from "react"
+import { date } from "zod"
 import { InputQuantity } from "../../../components/InputQuantity"
 import { CoffeeShopContext } from "../../../context/CartContext"
 
@@ -23,7 +24,8 @@ interface ItemCard {
     name: string,
     info: string,
     image: string,
-    price: number
+    price: number,
+    quantity: number
 }
 
 
@@ -36,7 +38,25 @@ export function Card({coffee}: ItemCardProps){
     
     const {addNewCoffeeCart} = useContext(CoffeeShopContext)
 
-  
+    const [amount, setAmount] = useState(coffee.quantity)
+    
+    function handleAddCoffeeCart(data: ItemCard){
+        addNewCoffeeCart(data)
+        setAmount(1)
+    }
+
+    function handleAddQuantity(){
+        if(amount < 20){
+            setAmount((state) => state + 1)
+        }
+    }
+
+    function handleRemoveQuantity(){
+        if(amount >1){
+            setAmount((state) => state - 1)
+        }
+    }
+
 
     return(
         <Container>
@@ -64,9 +84,13 @@ export function Card({coffee}: ItemCardProps){
                     <p>{priceFormatter(coffee.price)}</p>
                 </Price>
 
-                <InputQuantity/> 
+                <InputQuantity
+                    addQuantity={handleAddQuantity}
+                    quantity = {amount}
+                    removeQuantity={handleRemoveQuantity}
+                /> 
 
-                <ButtonBuy>
+                <ButtonBuy onClick={()=> handleAddCoffeeCart({...coffee, quantity: amount})}>
                     <ShoppingCartSimple weight="fill" size={22} />
                 </ButtonBuy>
                 

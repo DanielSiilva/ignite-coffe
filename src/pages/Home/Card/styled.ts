@@ -93,7 +93,6 @@ export const ActionBuy = styled.div`
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    /* gap: 0.5rem; */
 
     width: 12.5rem;
 
