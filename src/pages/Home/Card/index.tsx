@@ -1,5 +1,8 @@
 
+import { CaretCircleDoubleDown, CarSimple, ShoppingCartSimple } from "phosphor-react"
+import { useContext } from "react"
 import { InputQuantity } from "../../../components/InputQuantity"
+import { CoffeeShopContext } from "../../../context/CartContext"
 
 import { priceFormatter } from "../../../utils/formatter"
 
@@ -9,7 +12,8 @@ import {
     Header,
     TitleInfo,
     ActionBuy,
-    Price
+    Price,
+    ButtonBuy
 
 } from "./styled"
 
@@ -29,7 +33,8 @@ interface ItemCardProps {
 
 
 export function Card({coffee}: ItemCardProps){
-   
+    
+    const {addNewCoffeeCart} = useContext(CoffeeShopContext)
 
   
 
@@ -60,6 +65,10 @@ export function Card({coffee}: ItemCardProps){
                 </Price>
 
                 <InputQuantity/> 
+
+                <ButtonBuy>
+                    <ShoppingCartSimple weight="fill" size={22} />
+                </ButtonBuy>
                 
             </ActionBuy>
            

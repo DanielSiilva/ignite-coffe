@@ -125,3 +125,30 @@ export const Price = styled.div`
     }
 `
 
+export const ButtonBuy = styled.button`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+
+    width: 38px;
+    height: 38px;
+
+    background: ${props => props.theme['purple-dark']};
+    border-radius: 6px;
+    border: 0px;
+
+   
+
+    svg{
+        color: ${props => props.theme['white']};
+    }
+
+    :hover{
+        cursor: pointer;
+        background: ${props => props.theme['purple']};
+    }
+
+`
