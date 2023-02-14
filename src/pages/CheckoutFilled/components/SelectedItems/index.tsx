@@ -1,3 +1,6 @@
+import { Cookie } from 'phosphor-react'
+import { useContext } from 'react'
+import { CoffeeShopContext } from '../../../../context/CartContext'
 import {
     ItemsContainer,
     FinalizeOrder,
@@ -10,7 +13,7 @@ import {
 
 
 export function SelectedItems (){
-
+    const {coffee}  = useContext(CoffeeShopContext)
 
 
     return (
@@ -18,7 +21,13 @@ export function SelectedItems (){
             <h2>Cafés selecionados</h2>
 
             <ContainerOrder>
-
+                {coffee.map((item) => {
+                    return (
+                        <div>
+                            <img src={item.image} />
+                        </div>
+                    )
+                })}
 
 
 
