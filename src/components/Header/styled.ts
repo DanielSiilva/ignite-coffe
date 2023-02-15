@@ -58,6 +58,8 @@ export const Cart = styled.div`
     padding: 0.5rem;
     gap: 0.25rem;
 
+    position: relative;
+
     width: 2.375rem;
     height: 2.375rem;
 
@@ -69,4 +71,32 @@ export const Cart = styled.div`
         color: ${props=>props.theme['yellow-dark']};
     }
 
+
+    div{
+       /* Auto layout */
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: -8.35px;
+        top: -8px;
+
+        /* Brand / Yellow Dark */
+
+        background: #C47F17;
+        border-radius: 1000px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        z-index: 1;
+    }
 `
