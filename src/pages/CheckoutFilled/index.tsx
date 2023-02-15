@@ -10,6 +10,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import {
   FormContainer,
 } from './styled'
+import { useContext } from 'react'
+import { CoffeeShopContext } from '../../context/CartContext'
+import { useNavigate } from 'react-router-dom'
 
 
 const newOrderValidationSchema = zod.object({
@@ -22,10 +25,13 @@ const newOrderValidationSchema = zod.object({
   Uf: zod.string().min(1, "informe seu estado"),
 })
 
-type NewOrderData = zod.infer<typeof newOrderValidationSchema>
+export type NewOrderData = zod.infer<typeof newOrderValidationSchema>
 
 
 export function Checkout (){
+    const {clearItemCoffeeShopCart} = useContext(CoffeeShopContext)
+    const navigate = useNavigate()
+
 
 
     const newOrderForm = useForm<NewOrderData>({
@@ -41,10 +47,17 @@ export function Checkout (){
       },
     })
 
-    const {register, reset, handleSubmit} = newOrderForm
+    const {handleSubmit} = newOrderForm
+
+    function CreateNewOrderCoffee(data: NewOrderData){
+      clearItemCoffeeShopCart()
+      navigate( '/coffee-delivery/success', {
+        state: data
+      })
+    }
 
     return (
-        <FormContainer /*onSubmit={handleSubmit()} */>
+        <FormContainer onSubmit={handleSubmit(CreateNewOrderCoffee)} >
           <FormProvider {...newOrderForm}>
             <FormCompleteOrder />
             <SelectedItems />

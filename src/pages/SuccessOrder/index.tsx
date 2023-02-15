@@ -1,5 +1,9 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react';
+import { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Illustration from '../../assets/Illustration.svg'
+
+import {NewOrderData} from '../CheckoutFilled/index'
 
 
 
@@ -16,9 +20,26 @@ import {
     Icon3
 } from "./styled";
 
+interface LocationType {
+    state: NewOrderData
+}
+
 
 
 export function SuccessOrder (){
+    const {state} = useLocation() as unknown as LocationType
+    const navigate = useNavigate()
+
+
+    useEffect(()=>{
+        if(!state){
+            navigate('/')
+        }
+    }, [state, navigate])
+
+    if(!state){
+        return <></>
+    }
 
     return(
         <SuccessContainer>
@@ -37,15 +58,12 @@ export function SuccessOrder (){
                         </Icon1>
 
                         <InformationRequests>
-                            {/* Informççaões que vão vir do reducer */}
-
                             <p>
                                 Entrega em 
-                                <span>Rua João Daniel Martinelli, 102</span>
+                                <span>{state.Street}, {state.Number}</span>
                             </p>
 
-                            {/* Informççaões que vão vir do reducer */}
-                            <p>Farrapos - Porto Alegre, RS</p>
+                            <p>{state.City}</p>
                         </InformationRequests>
                     </BaseOrder>
 
@@ -72,7 +90,6 @@ export function SuccessOrder (){
                         <InformationRequests>
                             <p>Pagamento na entrega</p>
 
-                            {/* Informççaões que vão vir do reducer */}
                             <span>Cartão de Crédito </span> 
                         </InformationRequests>
                     </BaseOrder>
@@ -80,8 +97,6 @@ export function SuccessOrder (){
                 </Details>
             </OrderDetails>
 
-            {/* Bannher */}
-           
            <Banner src={Illustration} />
         </SuccessContainer>
     )
