@@ -1,6 +1,7 @@
 
 import { useContext } from 'react'
 import { CoffeeShopContext } from '../../../../context/CartContext'
+import { priceFormatter } from '../../../../utils/formatter'
 import { CartSelect } from './CartSelect'
 
 import {
@@ -16,6 +17,22 @@ export function SelectedItems (){
     const {coffee}  = useContext(CoffeeShopContext)
 
 
+    const deliveryPrice:number = 3.50
+
+    const totalItem = coffee.reduce(
+        (accumulator, currentValue) => currentValue.quantity + accumulator,
+        0,
+    )
+    const totalPrice = coffee.reduce(
+        (accumulator, currentValue) => currentValue.price + accumulator,
+        0,
+    ) * totalItem
+
+    
+
+
+
+
     return (
         <ItemsContainer>
             <h2>Cafés selecionados</h2>
@@ -25,17 +42,15 @@ export function SelectedItems (){
                     return (
                         <CartSelect
                             key={coffee.id} 
-                            coffee ={ coffee}
+                            coffeeItem ={ coffee}
                         />
                     )
                 })}
 
-
-
                 <FinalizeOrder>
                     <InformationRequest>
                         <span> Total de itens</span>
-                        <span> R$ 29,70</span>
+                        <span> R$ {priceFormatter(totalPrice)}</span>
                     </InformationRequest>
 
                     <InformationRequest>
@@ -45,7 +60,7 @@ export function SelectedItems (){
 
                     <InformationRequest>
                         <p> Total</p>
-                        <p> R$ 33,20</p>
+                        <p> R$ {priceFormatter(totalPrice + deliveryPrice)}</p>
                     </InformationRequest>
 
 

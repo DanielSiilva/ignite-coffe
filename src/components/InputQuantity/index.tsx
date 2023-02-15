@@ -18,7 +18,7 @@ export function InputQuantity({quantity, addQuantity, removeQuantity}: InputQuan
 
     return (
         <InputQuantityContainer>
-            <button onClick={removeQuantity}>
+            <button onClick={removeQuantity} type='button'>
                 <Minus size={14} weight="fill" />
             </button>
             
@@ -28,7 +28,7 @@ export function InputQuantity({quantity, addQuantity, removeQuantity}: InputQuan
                 value={quantity}
             />
 
-            <button onClick={addQuantity}>
+            <button onClick={addQuantity} type='button'>
                 <Plus  size={14} weight="fill"/>
             </button>
         </InputQuantityContainer>

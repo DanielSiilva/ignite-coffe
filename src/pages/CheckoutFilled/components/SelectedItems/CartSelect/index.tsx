@@ -1,5 +1,7 @@
 import { Trash } from 'phosphor-react'
+import { useContext, useState } from 'react'
 import { InputQuantity } from '../../../../../components/InputQuantity'
+import { CoffeeShopContext } from '../../../../../context/CartContext'
 import {CoffeeContextCart} from '../../../../../reducers/reducer'
 
 import {priceFormatter} from '../../../../../utils/formatter'
@@ -17,11 +19,35 @@ import {
 
 
 interface Coffee {
-    coffee: CoffeeContextCart
+    coffeeItem: CoffeeContextCart
 }
 
 
-export function CartSelect ({coffee}: Coffee){
+export function CartSelect ({coffeeItem}: Coffee){
+    const {addItemCoffeeShopCart, removeItemCoffeeShopCart, removeCoffeeShopCart} = useContext(CoffeeShopContext)
+
+    const [amount, setAmount] = useState(coffeeItem.quantity)
+    
+    function handleAddQuantity(){
+        if(amount < 20){
+            setAmount((state) => state + 1)
+            addItemCoffeeShopCart(coffeeItem)
+        }
+    }
+
+    function handleRemoveQuantity(){
+        if(amount >1){
+            setAmount((state) => state - 1)
+            removeItemCoffeeShopCart(coffeeItem)
+        }
+    }
+
+    function handleRemoveCart (id: number){
+        removeCoffeeShopCart(id)
+    }
+
+
+    
 
    
 
@@ -29,15 +55,23 @@ export function CartSelect ({coffee}: Coffee){
     return (
         <ContainerCart>
             <CartDetails>
-                <img src={coffee.image} />
+                <img src={coffeeItem.image} />
 
                 <CartPurchase>
-                    <p>{coffee.name}</p>
+                    <p>{coffeeItem.name}</p>
                     
                     <div>
-                        <InputQuantity />
+                        <InputQuantity 
+                            quantity={coffeeItem.quantity}
+                            addQuantity = {handleAddQuantity}
+                            removeQuantity = {handleRemoveQuantity}
+                        
+                        />
 
-                        <ButtonRemove>
+                        <ButtonRemove 
+                            type='button'  
+                            onClick={() => handleRemoveCart(coffeeItem.id)}
+                        >
                             <Trash  size={16}/>
                             remover
                         </ButtonRemove>
@@ -45,7 +79,7 @@ export function CartSelect ({coffee}: Coffee){
                 </CartPurchase>
             </CartDetails>
             
-            <Prince>R$ {priceFormatter(coffee.price)}</Prince>
+            <Prince>R$ {priceFormatter(coffeeItem.price)}</Prince>
 
         </ContainerCart>
     )
