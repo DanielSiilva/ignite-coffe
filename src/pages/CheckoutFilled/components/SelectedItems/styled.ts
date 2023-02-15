@@ -43,12 +43,13 @@ export const ContainerOrder = styled.div`
 
     position: absolute;
     width: 25rem;
-    height: 31.125rem;
+    height: auto;
     top: 11.375rem;
 
 
     background: ${props => props.theme['base-card']};
     border-radius: 6px 44px;
+
 
 `
 
