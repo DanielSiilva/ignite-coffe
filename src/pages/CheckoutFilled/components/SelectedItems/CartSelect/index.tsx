@@ -8,7 +8,8 @@ import {
     CartDetails,
     CartPurchase,
     ContainerCart,
-    ButtonRemove
+    ButtonRemove,
+    Prince
 }from './styled'
 
 
@@ -37,14 +38,14 @@ export function CartSelect ({coffee}: Coffee){
                         <InputQuantity />
 
                         <ButtonRemove>
-                            <Trash />
+                            <Trash  size={16}/>
                             remover
                         </ButtonRemove>
                     </div>
                 </CartPurchase>
             </CartDetails>
             
-            <p>R$ {priceFormatter(coffee.price)}</p>
+            <Prince>R$ {priceFormatter(coffee.price)}</Prince>
 
         </ContainerCart>
     )

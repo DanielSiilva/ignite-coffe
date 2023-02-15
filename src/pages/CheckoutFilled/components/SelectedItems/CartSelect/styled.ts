@@ -7,26 +7,41 @@ export const ContainerCart = styled.div`
     justify-content: space-between;
     align-items: flex-start;
     padding: 8px 4px;
-    gap: 59px;
+    gap: 1rem;
 
-    width: 320px;
+    width: 325px;
     height: 80px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 
     border-bottom: 1px solid #E6E5E5;
 
 
     background: ${props => props.theme['base-card']};
 
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-
-
-    border:  1px solid red;
 
 `
+export const Prince = styled.p`
+    width: 55px;
+    height: 21px;
+
+    font-family: 'Roboto';
+    white-space: nowrap;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 130%;
+  
+    display: flex;
+    align-items: center;
+    text-align: right;
+
+    color: ${props => props.theme['base-text']};
+
+`
+
+
+
+
 
 export const CartDetails = styled.div`
     display: flex;
@@ -66,13 +81,10 @@ export const ButtonRemove = styled.button`
     width: 91px;
     height: 40px;
 
-    /* Base/Button */
-
-    background: #E6E5E5;
+    background: ${props => props.theme['base-button']};
     border-radius: 6px;
     border: 0px;
 
-    /* Inside auto layout */
 
     //Font
 
@@ -81,12 +93,18 @@ export const ButtonRemove = styled.button`
     font-weight: 400;
     font-size: 12px;
     line-height: 160%;
-    /* or 19px */
-
+ 
     text-transform: uppercase;
 
-    /* Base/Text */
+    color: ${props => props.theme['base-title']};
 
-    color: #574F4D;
+    :hover{
+        cursor: pointer;
+    }
+
+
+    svg{
+        color: ${props => props.theme['purple']};
+    }
 
 `
