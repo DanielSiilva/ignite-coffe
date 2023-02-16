@@ -1,5 +1,6 @@
-import { Bank, CreditCard, CurrencyDollarSimple, MapPinLine, Money } from "phosphor-react";
+import {CurrencyDollarSimple, MapPinLine } from "phosphor-react";
 import { useFormContext } from "react-hook-form";
+
 
 import { 
     BaseInformation,
@@ -110,34 +111,7 @@ export function FormCompleteOrder(){
 
                 <PaymentButton>
 
-                    <button
-                        value={'cartão de crédito'}
-                    >
-                        <CreditCard  
-                            weight="bold"
-                            size={16}
-                        />
-                        Cartão de crédito
-                    </button>
-
-                    <button
-                        value={'cartão de débito'}
-                    >
-                        <Bank  
-                            size={16}
-                        />
-                        cartão de débito
-                    </button>
-
-
-                    <button
-                        value={'dinheiro'}
-                    >
-                        <Money 
-                            size={16}
-                        />
-                        dinheiro
-                    </button>
+                    
 
                 </PaymentButton>
 

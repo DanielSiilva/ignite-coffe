@@ -90,7 +90,7 @@ export function SuccessOrder (){
                         <InformationRequests>
                             <p>Pagamento na entrega</p>
 
-                            <span>Cartão de Crédito </span> 
+                            <span>FALTA ISSO</span> 
                         </InformationRequests>
                     </BaseOrder>
 
