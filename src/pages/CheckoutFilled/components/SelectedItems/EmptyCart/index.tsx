@@ -1,3 +1,5 @@
+import { ShoppingCart } from "phosphor-react";
+import { Container } from "./styled";
 
 
 
@@ -6,6 +8,9 @@ export function EmptyCart (){
 
 
     return (
-        <> Sem Itens</>
+        <Container>
+            <ShoppingCart  weight="fill"/>
+            <p>está vazio, adcione itens !</p>
+        </Container>
     )
 }
