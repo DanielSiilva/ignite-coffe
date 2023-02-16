@@ -1,5 +1,7 @@
 import { forwardRef, InputHTMLAttributes, ReactNode } from "react"
 
+import {InputContainer} from './styled'
+
 type MethodProps = InputHTMLAttributes<HTMLInputElement> & {
     icon: ReactNode
     label: string
@@ -10,7 +12,7 @@ HTMLInputElement,
 MethodProps
 >(({ id, icon, label, ...props }, ref) => {
 return (
-  <div>
+  <InputContainer>
     <input id={id} type="radio" {...props} name="paymentMethod" ref={ref} />
     <label htmlFor={id}>
       <div>
@@ -18,6 +20,6 @@ return (
         {label}
       </div>
     </label>
-  </div>
+  </InputContainer>
 )
 })
