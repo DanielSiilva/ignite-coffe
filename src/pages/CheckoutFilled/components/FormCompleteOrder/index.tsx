@@ -1,5 +1,6 @@
 import {CurrencyDollarSimple, MapPinLine } from "phosphor-react";
 import { useFormContext } from "react-hook-form";
+import { PaymentMethods } from "../../../../components/PaymentMethod";
 
 
 import { 
@@ -110,7 +111,7 @@ export function FormCompleteOrder(){
                 </BaseInformation>
 
                 <PaymentButton>
-
+                    <PaymentMethods />
                     
 
                 </PaymentButton>
