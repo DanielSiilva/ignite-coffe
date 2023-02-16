@@ -13,7 +13,7 @@ MethodProps
 >(({ id, icon, label, ...props }, ref) => {
 return (
   <InputContainer>
-    <input id={id} type="radio" {...props} name="paymentMethod" ref={ref} />
+    <input id={id} type="radio" {...props} name="paymentMethod" ref={ref} required/>
     <label htmlFor={id}>
       <div>
         {icon}

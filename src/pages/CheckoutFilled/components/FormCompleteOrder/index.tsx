@@ -54,22 +54,27 @@ export function FormCompleteOrder(){
                     <Cpf 
                         placeholder="CPF" 
                         {...register('cpf')}
+                        required
                     />
 
                     <Street 
                         placeholder="Rua" 
                         {...register('Street')}
+                        required
                     />
 
 
                     <NumberAndComplement>
                         <Number 
-                            placeholder="Número" {...register('Number')}
+                            placeholder="Número" 
+                            {...register('Number')}
+                            required
                         />
 
                         <Complement 
                             placeholder="Complemento" 
                             {...register('Complement')}
+                            required
                         />
                     </NumberAndComplement>
                     
@@ -77,15 +82,19 @@ export function FormCompleteOrder(){
                         <Neighborhood 
                             placeholder="Bairro"
                             {...register('Neighborhood')}
+                            required
                          />
 
                         <ECity 
-                            placeholder="Cidade" {...register('City')}
+                            placeholder="Cidade" 
+                            {...register('City')}
+                            required
                         />
 
                         <Uf    
                             placeholder="UF"
-                            {...register('Uf')} 
+                            {...register('Uf')}
+                            required 
                         />      
                     </City>
                     
