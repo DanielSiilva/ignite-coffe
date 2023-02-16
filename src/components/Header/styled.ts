@@ -73,8 +73,7 @@ export const Cart = styled.div`
 
 
     div{
-       /* Auto layout */
-
+     
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -92,11 +91,22 @@ export const Cart = styled.div`
         background: #C47F17;
         border-radius: 1000px;
 
-        /* Inside auto layout */
+        //font
 
-        flex: none;
-        order: 1;
-        flex-grow: 0;
-        z-index: 1;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 130%;
+     
+
+        text-align: center;
+        
+
+        /* Base/White */
+
+        color: #FFFFFF;
+
+
     }
 `

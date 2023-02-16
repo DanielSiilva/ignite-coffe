@@ -112,8 +112,6 @@ export function FormCompleteOrder(){
 
                 <PaymentButton>
                     <PaymentMethods />
-                    
-
                 </PaymentButton>
 
             </PaymentMethod>
