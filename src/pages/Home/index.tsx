@@ -11,9 +11,9 @@ import { CoffeeShopContext } from "../../context/CartContext"
 
 export function Home (){
 
-    const {coffees} = useContext(CoffeeShopContext)
+   
 
-    console.log(coffees)
+   
 
     return(
         <Wrapper>
