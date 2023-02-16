@@ -14,11 +14,10 @@ import { useContext } from 'react'
 import { CoffeeShopContext } from '../../context/CartContext'
 import { useNavigate } from 'react-router-dom'
 
-//test
-enum paymentMethods{
-  CREDIT = 'CREDIT',
-  DEBIT = 'DEBIT',
-  MONEY = 'MONEY',
+enum Methods {
+  CREDIT = 'credit',
+  DEBIT = 'debit',
+  MONEY = 'money',
 }
 
 
@@ -30,6 +29,11 @@ const newOrderValidationSchema = zod.object({
   Neighborhood: zod.string().min(1, "Informe seu bairro"),
   City: zod.string().min(1, "Informe sua cidade"),
   Uf: zod.string().min(1, "informe seu estado"),
+  paymentMethod: zod.nativeEnum(Methods, {
+    errorMap: () => {
+      return { message: 'Informe o método de pagamento' }
+    },
+  }),
   
  
 
@@ -46,7 +50,10 @@ export function Checkout (){
 
 
     const newOrderForm = useForm<NewOrderData>({
-      resolver: zodResolver(newOrderValidationSchema)
+      resolver: zodResolver(newOrderValidationSchema),
+      defaultValues:{
+        paymentMethod: undefined
+      }
     })
 
     const {handleSubmit} = newOrderForm

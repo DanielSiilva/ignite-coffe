@@ -2,6 +2,7 @@ import { CurrencyDollar, MapPin, Timer } from 'phosphor-react';
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Illustration from '../../assets/Illustration.svg'
+import {Methods} from '../../components/PaymentMethod/index'
 
 import {NewOrderData} from '../CheckoutFilled/index'
 
@@ -90,7 +91,7 @@ export function SuccessOrder (){
                         <InformationRequests>
                             <p>Pagamento na entrega</p>
 
-                            <span>FALTA ISSO</span> 
+                            <span>{Methods[state.paymentMethod].label}</span> 
                         </InformationRequests>
                     </BaseOrder>
 
