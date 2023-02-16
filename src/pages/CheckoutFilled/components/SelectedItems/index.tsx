@@ -32,6 +32,7 @@ export function SelectedItems (){
     
 
     const cartSize = coffee.length
+    const addToCart= coffee.length === 0
 
 
     return (
@@ -72,7 +73,7 @@ export function SelectedItems (){
                     </InformationRequest>
 
 
-                    <FinishButton type='submit'>
+                    <FinishButton type='submit' disabled={addToCart}>
                         confirmar pedido
                     </FinishButton>
                 </FinalizeOrder>

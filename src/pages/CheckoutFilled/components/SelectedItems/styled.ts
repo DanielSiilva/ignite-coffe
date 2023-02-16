@@ -129,5 +129,11 @@ export const FinishButton = styled.button`
     color: ${props => props.theme['white']};
     font-stretch: 100;
 
+
+    :disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+
 `
 
