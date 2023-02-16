@@ -1,7 +1,8 @@
 import { CreditCard, Bank, Money } from "phosphor-react"
 import { useFormContext } from "react-hook-form"
 import { InputMethodsPayment } from "../InputMethosPayment"
-import { PaymentMethodContainer } from "./styled"
+
+import {PaymentMethodContainer} from '../InputMethosPayment/styled'
 
 
 export const Methods = {

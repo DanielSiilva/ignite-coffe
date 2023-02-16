@@ -1,60 +1,60 @@
-import styled, { css } from "styled-components";
+import styled from 'styled-components'
 
-
-export const InputContainer = styled.div`
-
+export const PaymentMethodContainer = styled.div`
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    padding: 16px;
-    gap: 12px;
+    gap: 0.75rem;
 
-    width: 178.67px;
-    height: 51px;
 
-    /* Brand/Purple Light */
+`
 
-    background: ${props => props.theme['purple-light']};
-    border-radius: 6px;
+export const PaymentInputContainer = styled.div`
+  cursor: pointer;
 
-    input {
-        visibility: hidden;
-        appearance: none;
+  input {
+    visibility: hidden;
+    appearance: none;
+  }
 
-    }
+  input:checked + label div {
+    background-color: ${props => props.theme['purple-light']};
+    border-color: ${props => props.theme['purple']};
 
     :hover{
         cursor: pointer;
-        border: 1px solid ${props => props.theme['base-hover']};
+        background-color: ${props => props.theme['purple-light']};
     }
+  }
+`
 
+export const ContentContainer = styled.div`
+  height: 3rem;
+  padding: 0 1rem;
 
-    label{
+  
 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
 
-        div{
-            display: flex;
-            align-items: center;
-            gap: 5px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
 
+  border-radius: 6px;
+  border: 1px solid ${props => props.theme['base-button']};;
+ 
+  transition: 0.4s;
 
-            //Font
-            white-space: nowrap;
+  svg {
+    color: ${props => props.theme['purple']};
+  }
 
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 160%;
-            text-transform: uppercase;
+  &:hover {
+    cursor: pointer;
+    background: ${props => props.theme['base-hover']};
+  }
 
-            color: ${props => props.theme['base-text']};
-
-            :hover{
-                cursor: pointer;
-            }
-        }
-    }
-
-    user-select: none;
+  user-select: none;
 `

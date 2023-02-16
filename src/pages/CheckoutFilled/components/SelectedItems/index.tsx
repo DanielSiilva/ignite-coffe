@@ -41,7 +41,6 @@ export function SelectedItems (){
 
             <ContainerOrder>
                 {cartSize > 0 ?  
-
                     coffee.map((coffee)=>{
                         return (
                             <CartSelect
@@ -49,11 +48,7 @@ export function SelectedItems (){
                                 coffeeItem ={ coffee}
                             />
                         )
-                    })
-                    
-                    : 
-                    
-                    <EmptyCart />
+                    }): <EmptyCart />
                 }
 
                 <FinalizeOrder>
