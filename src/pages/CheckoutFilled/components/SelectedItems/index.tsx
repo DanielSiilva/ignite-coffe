@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { CoffeeShopContext } from '../../../../context/CartContext'
 import { priceFormatter } from '../../../../utils/formatter'
 import { CartSelect } from './CartSelect'
+import { EmptyCart } from './EmptyCart'
 
 import {
     ItemsContainer,
@@ -16,7 +17,7 @@ import {
 export function SelectedItems (){
     const {coffee}  = useContext(CoffeeShopContext)
 
-
+    
     const deliveryPrice:number = 3.50
 
     const totalItem = coffee.reduce(
@@ -30,7 +31,7 @@ export function SelectedItems (){
 
     
 
-
+    const cartSize = coffee.length
 
 
     return (
@@ -38,14 +39,21 @@ export function SelectedItems (){
             <h2>Cafés selecionados</h2>
 
             <ContainerOrder>
-                {coffee.map((coffee) => {
-                    return (
-                        <CartSelect
-                            key={coffee.id} 
-                            coffeeItem ={ coffee}
-                        />
-                    )
-                })}
+                {cartSize > 0 ?  
+
+                    coffee.map((coffee)=>{
+                        return (
+                            <CartSelect
+                                key={coffee.id} 
+                                coffeeItem ={ coffee}
+                            />
+                        )
+                    })
+                    
+                    : 
+                    
+                    <EmptyCart />
+                }
 
                 <FinalizeOrder>
                     <InformationRequest>
